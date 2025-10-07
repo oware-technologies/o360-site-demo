@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — O360 Platform</title>
+  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap)" rel="stylesheet">
+  <style>
+    :root {
+      --brand-header: #121A41;  /* primary dark */
+      --brand-primary: #142146;  /* primary blue */
+      --brand-contrast: #FFFFFF; /* white */
+      --brand-accent: #95C93D;    /* secondary green CTA */
+      --brand-accent-dark: #7FB333;
+      --brand-primary-50: #EEF2FA; /* soft tint */
+    }
+    body {font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    .btn-primary {background: var(--brand-accent); color: var(--brand-contrast); transition: background-color .3s ease;}
+    .btn-primary:hover {background: var(--brand-accent-dark);}
+    .shadow-soft {box-shadow: 0 10px 40px rgba(2,25,64,0.08)}
+    .brand-gradient {background: linear-gradient(135deg, var(--brand-primary), var(--brand-header))}
+    .tab-btn{border:1px solid #e5e7eb; background:#fff; color:#0f172a; transition: all .3s ease;}
+    .tab-btn.active{background:var(--brand-primary); color:#fff; border-color:var(--brand-primary)}
+    #featurePanels .panel { transition: opacity 0.3s ease-in-out; }
+    .scroll-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .scroll-animate.is-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[var(--brand-header)]/80 backdrop-blur-sm text-[var(--brand-contrast)]">
+    <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 p-2 rounded-lg bg-[var(--brand-primary)]" aria-label="O360 Home">
+              <img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto">
+            </a>
+            <nav aria-label="Primary" class="hidden md:flex items-center gap-8 text-sm font-medium">
+              <a href="index.html#platform" class="text-white/90 hover:text-white transition-colors">Platform</a>
+              <a href="features.html" class="text-white font-bold transition-colors">Features</a>
+              <a href="industries.html" class="text-white/90 hover:text-white transition-colors">Industries</a>
+              <a href="case_studies.html" class="text-white/90 hover:text-white transition-colors">Case Studies</a>
+              <a href="about.html" class="text-white/90 hover:text-white transition-colors">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="index.html#demo" class="hidden sm:block px-5 py-2 rounded-xl text-sm font-semibold btn-primary shadow-soft">Request Demo</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10" aria-label="Open main menu" aria-expanded="false">
+                    <svg class="h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="h-6 w-6 hidden" id="menu-close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html#platform" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Platform</a>
+            <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Features</a>
+            <a href="industries.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Industries</a>
+            <a href="case_studies.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Case Studies</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">About Us</a>
+            <a href="index.html#demo" class="block sm:hidden mt-2 w-full text-center px-5 py-3 rounded-xl text-base font-semibold btn-primary shadow-soft">Request Demo</a>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-brand-primary-50 py-16 md:py-24"><div class="container mx-auto px-4 text-center scroll-animate"><h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand">A Modular Platform for Your Entire Supply Chain</h1><p class="mt-5 text-lg text-slate-600 max-w-3xl mx-auto">Start with the O360 Foundation for a single source of truth, and extend capabilities with our specialized modules for warehouse, manufacturing, and transportation management.</p></div></section>
+    <section id="features" class="py-16 md:py-24"><div class="container mx-auto px-4 scroll-animate"><div class="sticky top-20 bg-white/80 backdrop-blur-sm py-4 z-10"><div class="flex flex-wrap justify-center gap-2" id="featureTabs"><button class="tab-btn px-4 py-2 text-sm font-semibold rounded-xl active" data-tab="o360">O360 Foundation</button><button class="tab-btn px-4 py-2 text-sm font-semibold rounded-xl" data-tab="stock360">Stock360 (WMS)</button><button class="tab-btn px-4 py-2 text-sm font-semibold rounded-xl" data-tab="make360">Make360 (MES)</button><button class="tab-btn px-4 py-2 text-sm font-semibold rounded-xl" data-tab="transit360">Transit360 (TMS)</button></div></div><div class="mt-8 grid md:grid-cols-3 gap-6" id="featurePanels"><div class="panel md:col-span-2 grid gap-6" data-panel="o360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Value</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Single workspace for teams and partners</li><li>Faster decisions with live, event‑driven data</li><li>Easy to use UI; minimal training</li></ul></div><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Features</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Inventory: availability, lots/batches, multi‑site</li><li>Orders: capture, ATP/allocations, exceptions</li><li>Collaboration: tasks, comments, files, audit trail</li><li>Security: RBAC, SSO/SAML, encryption, logs</li><li>APIs & webhooks for ERP/partner integration</li></ul></div></div><div class="panel" data-panel="o360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft h-full flex flex-col"><h4 class="font-semibold text-center">Unified Order Management</h4><svg viewBox="0 0 300 200" class="w-full h-auto mt-4 flex-grow"><defs><g id="icon-file-plus" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></g><g id="icon-database" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></g><g id="icon-check-circle" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></g></defs><g opacity="0.5"><text x="50" y="15" font-size="10" text-anchor="middle" fill="#64748b">Create</text><text x="150" y="15" font-size="10" text-anchor="middle" fill="#64748b">Validate</text><text x="250" y="15" font-size="10" text-anchor="middle" fill="#64748b">Confirm</text></g><path d="M 70 50 H 230" stroke-dasharray="4 2" stroke="#cbd5e1"/><g><use href="#icon-file-plus" x="30" y="30" width="40" height="40" stroke="var(--brand-primary)"/><animateTransform attributeName="transform" type="translate" values="0 0; 100 0; 200 0; 200 0" keyTimes="0; 0.4; 0.8; 1" dur="6s" repeatCount="indefinite" /></g><use href="#icon-database" x="130" y="30" width="40" height="40" stroke="#9ca3af" opacity="0"><animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.4; 0.45; 0.75; 0.8; 1" dur="6s" repeatCount="indefinite"/></use><use href="#icon-check-circle" x="230" y="30" width="40" height="40" stroke="var(--brand-accent)" opacity="0"><animate attributeName="opacity" values="0; 0; 0; 1; 1" keyTimes="0; 0.75; 0.8; 0.9; 1" dur="6s" repeatCount="indefinite" /></use><text x="150" y="120" text-anchor="middle" font-size="12" fill="#0f172a">Single Source of Truth</text><rect x="50" y="130" width="200" height="40" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/><text x="150" y="155" text-anchor="middle" font-size="10" fill="#64748b">ERP / TMS / WMS Data Synced</text></svg></div></div><div class="panel hidden md:col-span-2 grid gap-6" data-panel="stock360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Value</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Higher pick accuracy and faster throughput</li><li>Fewer write‑offs with tighter inventory control</li><li>3PL‑ready billing without spreadsheets</li></ul></div><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Features</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>ASN → Putaway → Picking (wave/cluster) → Dispatch</li><li>Mobile workflows, barcode/RF, slotting, cycle counting</li><li>Audits & traceability, 3PL billing (storage/handling/fees)</li></ul></div></div><div class="panel hidden" data-panel="stock360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft h-full flex flex-col"><h4 class="font-semibold text-center">Smart Warehouse Operations</h4><svg viewBox="0 0 300 200" class="w-full h-auto mt-4 flex-grow"><defs><g id="icon-pallet" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="15" width="20" height="4" fill="#E2E8F0" stroke="none"/><rect x="4" y="5" width="16" height="10" fill="var(--brand-accent)" stroke="var(--brand-primary)"/><rect x="7" y="8" width="10" height="4" fill-opacity="0.2" fill="#fff" stroke="none"/></g></defs><g fill="#F8FAFC" stroke="#E2E8F0"> <rect x="0" y="30" width="70" height="150" rx="5"/><text x="12" y="20" font-size="10">Receiving</text><rect x="230" y="30" width="70" height="150" rx="5"/><text x="245" y="20" font-size="10">Shipping</text><rect x="90" y="60" width="120" height="120" rx="5"/><rect x="98" y="68" width="25" height="40" rx="2"/><rect x="138" y="68" width="25" height="40" rx="2"/><rect x="178" y="68" width="25" height="40" rx="2"/><rect x="98" y="118" width="25" height="40" rx="2"/><rect x="138" y="118" width="25" height="40" rx="2"/><rect x="178" y="118" width="25" height="40" rx="2"/><text x="118" y="50" font-size="10">Storage Racks</text></g><g><use href="#icon-pallet"/><animateMotion path="M 25 100 C 25 50, 80 50, 110 88 M 110 88 C 110 88, 160 140, 190 140 M 190 140 C 220 140, 265 100, 265 100" dur="8s" repeatCount="indefinite" /></g></svg></div></div><div class="panel hidden md:col-span-2 grid gap-6" data-panel="make360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Value</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Shorter cycle times and fewer stockouts</li><li>Better quality with live shop‑floor visibility</li><li>Improved material planning and backflush accuracy</li></ul></div><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Features</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Planning & scheduling</li><li>Work orders, BOM, routings, WIP tracking</li><li>Downtime, quality & scrap logging</li><li>Material availability, issues & backflush</li></ul></div></div><div class="panel hidden" data-panel="make360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft h-full flex flex-col"><h4 class="font-semibold text-center">Multi-Stage Production</h4><svg viewBox="0 0 300 200" class="w-full h-auto mt-4 flex-grow"><defs><g id="icon-gear-small" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></g><g id="finished-box" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--brand-accent)"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></g></defs><text x="10" y="20" font-size="10">Materials</text><text x="95" y="20" font-size="10">Assembly</text><text x="195" y="20" font-size="10">Packaging</text><rect x="80" y="70" width="60" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0" /><rect x="180" y="70" width="60" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0" /><path d="M 40 100 H 80 M 140 100 H 180 M 240 100 H 280" stroke-dasharray="4 2" stroke="#cbd5e1"/><g> <use href="#icon-gear-small" stroke="#9ca3af" x="5" y="88" width="24" height="24"/><animateTransform attributeName="transform" type="translate" from="0 0" to="50 0" dur="7s" repeatCount="indefinite"/> </g><g><rect x="145" y="90" width="20" height="20" rx="2" fill="#a7b5d4" opacity="0"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.45;0.7;1" dur="7s" repeatCount="indefinite" /><animateTransform attributeName="transform" type="translate" from="0 0" to="50 0" dur="3s" begin="2.8s" repeatCount="indefinite" fill="freeze"/></g><g><use href="#finished-box" x="245" y="88" width="24" height="24" opacity="0"/><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.8;0.85;1" dur="7s" repeatCount="indefinite" /></g></svg></div></div><div class="panel hidden md:col-span-2 grid gap-6" data-panel="transit360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Value</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Lower freight cost with better tendering & routing</li><li>Reliable ETAs across land, sea and air</li><li>Accurate carrier billing & faster dispute resolution</li></ul></div><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft"><h3 class="text-lg font-bold">Features</h3><ul class="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1"><li>Carrier management: onboarding, contracts, scorecards</li><li>Billing & invoicing: rating engines, accruals, audits</li><li>Tracking: milestones, GPS/telematics, ePOD</li><li>Event‑driven status via APIs, EDI, webhooks, IoT</li></ul></div></div><div class="panel hidden" data-panel="transit360"><div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft h-full flex flex-col"><h4 class="font-semibold text-center">Multi-Modal Logistics</h4><svg viewBox="0 0 300 200" class="w-full h-auto mt-4 flex-grow"><defs><g id="icon-warehouse" stroke="var(--brand-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M3 21V8l9-5 9 5v13h-4v-9H7v9H3z"></path></g><g id="icon-plane" stroke="var(--brand-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M22 12V2l-8.5 2.15L3 12v4l5-2 5 2v4l-3 1v3l5-2 5 2v-3l-3-1v-4l5-2 5 2v-4z"></path></g><g id="icon-pin" stroke="var(--brand-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></g></defs><use href="#icon-warehouse" x="15" y="150" width="30" height="30" /> <text x="18" y="145" font-size="10">Origin</text><use href="#icon-plane" x="135" y="20" width="30" height="30" /> <text x="125" y="60" font-size="10">Air Freight</text><use href="#icon-pin" x="255" y="150" width="30" height="30" /> <text x="245" y="145" font-size="10">Destination</text><path d="M 40 150 C 80 150, 120 40, 150 40 C 180 40, 220 150, 260 150" stroke-dasharray="4 2" stroke="#cbd5e1" stroke-width="1.5" fill="none"/><g><use href="#finished-box" x="-12" y="-12" width="24" height="24"/><animateMotion dur="8s" repeatCount="indefinite" path="M 40 150 C 80 150, 120 40, 150 40 C 180 40, 220 150, 260 150" /></g></svg></div></div></div></div></section>
+  </main>
+
+  <footer class="py-10 bg-[var(--brand-header)] text-[var(--brand-contrast)]"><div class="container mx-auto px-4"><div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left"><div class="flex items-center gap-3 justify-center md:justify-start"><img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto"></div><div class="text-sm text-white/80"><a href="about.html" class="hover:text-white">About Us</a> | <a href="#" class="hover:text-white">Careers</a> | <a href="#" class="hover:text-white">Contact</a></div><p class="text-xs text-white/60 md:text-right">© <span id="year"></span> Oware Technologies, Inc. All rights reserved.</p></div></div></footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      const tabBtns = document.querySelectorAll('#featureTabs .tab-btn');
+      const panels = document.querySelectorAll('#featurePanels .panel');
+      function showPanel(key){
+        tabBtns.forEach(b=>b.classList.toggle('active', b.dataset.tab===key));
+        panels.forEach(p=>p.classList.toggle('hidden', p.dataset.panel!==key));
+      }
+      tabBtns.forEach(b=> b.addEventListener('click', ()=> showPanel(b.dataset.tab)));
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
