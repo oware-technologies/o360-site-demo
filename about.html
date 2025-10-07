@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About O360 — Our Mission and Team</title>
+  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap)" rel="stylesheet">
+  <style>
+    :root {
+      --brand-header: #121A41;  /* primary dark */
+      --brand-primary: #142146;  /* primary blue */
+      --brand-contrast: #FFFFFF; /* white */
+      --brand-accent: #95C93D;    /* secondary green CTA */
+      --brand-accent-dark: #7FB333;
+      --brand-primary-50: #EEF2FA; /* soft tint */
+    }
+    body {font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    .btn-primary {background: var(--brand-accent); color: var(--brand-contrast); transition: background-color .3s ease;}
+    .btn-primary:hover {background: var(--brand-accent-dark);}
+    .shadow-soft {box-shadow: 0 10px 40px rgba(2,25,64,0.08)}
+    .brand-gradient {background: linear-gradient(135deg, var(--brand-primary), var(--brand-header))}
+    .scroll-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .scroll-animate.is-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[var(--brand-header)]/80 backdrop-blur-sm text-[var(--brand-contrast)]">
+    <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 p-2 rounded-lg bg-[var(--brand-primary)]" aria-label="O360 Home">
+              <img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto">
+            </a>
+            <nav aria-label="Primary" class="hidden md:flex items-center gap-8 text-sm font-medium">
+              <a href="index.html#platform" class="text-white/90 hover:text-white transition-colors">Platform</a>
+              <a href="features.html" class="text-white/90 hover:text-white transition-colors">Features</a>
+              <a href="industries.html" class="text-white/90 hover:text-white transition-colors">Industries</a>
+              <a href="case_studies.html" class="text-white/90 hover:text-white transition-colors">Case Studies</a>
+              <a href="about.html" class="text-white font-bold transition-colors">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="index.html#demo" class="hidden sm:block px-5 py-2 rounded-xl text-sm font-semibold btn-primary shadow-soft">Request Demo</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10" aria-label="Open main menu" aria-expanded="false">
+                    <svg class="h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="h-6 w-6 hidden" id="menu-close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html#platform" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Platform</a>
+            <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Features</a>
+            <a href="industries.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Industries</a>
+            <a href="case_studies.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Case Studies</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">About Us</a>
+            <a href="index.html#demo" class="block sm:hidden mt-2 w-full text-center px-5 py-3 rounded-xl text-base font-semibold btn-primary shadow-soft">Request Demo</a>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-brand-primary-50"><div class="container mx-auto px-4 py-16 md:py-24 text-center"><div class="scroll-animate"><h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand">We're on a mission to simplify supply chain complexity.</h1><p class="mt-5 text-lg text-slate-600 max-w-3xl mx-auto">Founded by supply chain experts and technologists, O360 was built to solve the fragmentation and visibility challenges that plague growing businesses in emerging markets. We believe that powerful technology should be accessible, intuitive, and drive real-world results.</p></div></div></section>
+    <section class="py-16 md:py-24"><div class="container mx-auto px-4"><div class="text-center scroll-animate"><h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">Our Values</h2><p class="mt-3 text-slate-600 max-w-2xl mx-auto">Our principles guide every decision we make, from product development to customer support.</p></div><div class="mt-12 grid md:grid-cols-3 gap-8 text-left"><div class="scroll-animate"><div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft h-full"><h3 class="text-xl font-bold text-brand">Customer-Obsessed</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">We succeed only when our customers succeed. We immerse ourselves in their challenges to build solutions that deliver tangible value and a superior user experience.</p></div></div><div class="scroll-animate" style="transition-delay: 150ms;"><div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft h-full"><h3 class="text-xl font-bold text-brand">Simplify & Innovate</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Supply chain is complex enough. We are relentlessly focused on simplifying workflows and abstracting away complexity through thoughtful design and continuous innovation.</p></div></div><div class="scroll-animate" style="transition-delay: 300ms;"><div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft h-full"><h3 class="text-xl font-bold text-brand">Win as a Team</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">We are a diverse team of builders, problem-solvers, and supply chain enthusiasts. We foster a culture of collaboration, respect, and shared ownership to achieve our goals together.</p></div></div></div></div></section>
+    <section class="py-16 md:py-24 bg-slate-50/70"><div class="container mx-auto px-4"><div class="text-center scroll-animate"><h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">Meet the Leadership</h2><p class="mt-3 text-slate-600 max-w-2xl mx-auto">Our team brings together decades of experience in logistics, technology, and enterprise software.</p></div><div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"><div class="text-center scroll-animate"><img class="w-40 h-40 rounded-full mx-auto shadow-md" src="[https://placehold.co/200x200/EEF2FA/142146?text=CEO](https://placehold.co/200x200/EEF2FA/142146?text=CEO)" alt="CEO"><h3 class="mt-4 text-lg font-bold text-brand">Hasan AL-Abdulla</h3><p class="text-sm text-slate-500">Co-Founder & CEO</p></div><div class="text-center scroll-animate" style="transition-delay: 150ms;"><img class="w-40 h-40 rounded-full mx-auto shadow-md" src="[https://placehold.co/200x200/EEF2FA/142146?text=CTO](https://placehold.co/200x200/EEF2FA/142146?text=CTO)" alt="CTO"><h3 class="mt-4 text-lg font-bold text-brand">Zayd AL-Hammami</h3><p class="text-sm text-slate-500">Co-Founder & CTO</p></div><div class="text-center scroll-animate" style="transition-delay: 300ms;"><img class="w-40 h-40 rounded-full mx-auto shadow-md" src="[https://placehold.co/200x200/EEF2FA/142146?text=Head](https://placehold.co/200x200/EEF2FA/142146?text=Head)" alt="Head of Product"><h3 class="mt-4 text-lg font-bold text-brand">Fatima AL-Jamil</h3><p class="text-sm text-slate-500">Head of Product</p></div><div class="text-center scroll-animate" style="transition-delay: 450ms;"><img class="w-40 h-40 rounded-full mx-auto shadow-md" src="[https://placehold.co/200x200/EEF2FA/142146?text=Head](https://placehold.co/200x200/EEF2FA/142146?text=Head)" alt="Head of Sales"><h3 class="mt-4 text-lg font-bold text-brand">Yousef AL-Fayez</h3><p class="text-sm text-slate-500">Head of Sales</p></div></div></div></section>
+    <section class="py-16 md:py-24 brand-gradient"><div class="container mx-auto px-4 text-center text-white"><div class="scroll-animate"><h2 class="text-3xl md:text-4xl font-extrabold">Join Our Team</h2><p class="mt-3 text-lg text-white/90 max-w-2xl mx-auto">Ready to build the future of supply chain? We're always looking for talented and passionate people to join our mission.</p><div class="mt-8"><a href="#" class="px-8 py-3 rounded-xl font-semibold bg-white text-brand transition hover:bg-slate-100">View Open Positions</a></div></div></div></section>
+  </main>
+
+  <footer class="py-10 bg-[var(--brand-header)] text-[var(--brand-contrast)]"><div class="container mx-auto px-4"><div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left"><div class="flex items-center gap-3 justify-center md:justify-start"><img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto"></div><div class="text-sm text-white/80"><a href="about.html" class="hover:text-white">About Us</a> | <a href="#" class="hover:text-white">Careers</a> | <a href="#" class="hover:text-white">Contact</a></div><p class="text-xs text-white/60 md:text-right">© <span id="year"></span> Oware Technologies, Inc. All rights reserved.</p></div></div></footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              mobileMenu.classList.add('hidden');
+              openIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+          });
+      });
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
