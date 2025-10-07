@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O360 — Supply Chain Control Tower Platform</title>
+  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap)" rel="stylesheet">
+  <style>
+    :root {
+      --brand-header: #121A41;  /* primary dark */
+      --brand-primary: #142146;  /* primary blue */
+      --brand-contrast: #FFFFFF; /* white */
+      --brand-accent: #95C93D;    /* secondary green CTA */
+      --brand-accent-dark: #7FB333;
+      --brand-primary-50: #EEF2FA; /* soft tint */
+    }
+    body {font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    .btn-primary {background: var(--brand-accent); color: var(--brand-contrast); transition: background-color .3s ease;}
+    .btn-primary:hover {background: var(--brand-accent-dark);}
+    .btn-outline {background:#fff; border:1px solid #e2e8f0; transition: background-color .3s ease;}
+    .btn-outline:hover{background:#f8fafc}
+    .chip {border: 1px solid rgba(149,201,61,0.35); background:#F3F8E7; color:#2E4F0B}
+    .text-brand {color: var(--brand-primary);}
+    .text-accent {color:var(--brand-accent)}
+    .bg-hero {background: radial-gradient(1200px 400px at 10% -10%, var(--brand-primary-50) 0%, #fff 60%)}
+    .shadow-soft {box-shadow: 0 10px 40px rgba(2,25,64,0.08)}
+    .brand-gradient {background: linear-gradient(135deg, var(--brand-primary), var(--brand-header))}
+    
+    /* Scroll Animations */
+    .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[var(--brand-header)]/80 backdrop-blur-sm text-[var(--brand-contrast)]">
+    <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 p-2 rounded-lg bg-[var(--brand-primary)]" aria-label="O360 Home">
+              <img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav aria-label="Primary" class="hidden md:flex items-center gap-8 text-sm font-medium">
+              <a href="#platform" class="text-white/90 hover:text-white transition-colors">Platform</a>
+              <a href="features.html" class="text-white/90 hover:text-white transition-colors">Features</a>
+              <a href="industries.html" class="text-white/90 hover:text-white transition-colors">Industries</a>
+              <a href="case_studies.html" class="text-white/90 hover:text-white transition-colors">Case Studies</a>
+              <a href="about.html" class="text-white/90 hover:text-white transition-colors">About Us</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#demo" class="hidden sm:block px-5 py-2 rounded-xl text-sm font-semibold btn-primary shadow-soft">Request Demo</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-label="Open main menu" aria-expanded="false">
+                    <svg class="h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="h-6 w-6 hidden" id="menu-close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#platform" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Platform</a>
+            <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Features</a>
+            <a href="industries.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Industries</a>
+            <a href="case_studies.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">Case Studies</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/10">About Us</a>
+            <a href="#demo" class="block sm:hidden mt-2 w-full text-center px-5 py-3 rounded-xl text-base font-semibold btn-primary shadow-soft">Request Demo</a>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="bg-hero">
+      <div class="container mx-auto px-4 pt-16 pb-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+        <div class="scroll-animate">
+          <span class="inline-flex chip px-3 py-1 rounded-full text-xs font-semibold">BUILT FOR ENTERPRISE SCALE</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            The Modern OS for Your<br>
+            <span class="text-accent">Entire Supply Chain</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl">
+            O360 harmonizes data from your fragmented systems into a single collaborative workspace. Gain end-to-end visibility and empower your teams to act faster.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#demo" class="px-6 py-3 rounded-xl font-semibold btn-primary shadow-soft">Request a Demo</a>
+            <a href="#platform" class="px-6 py-3 rounded-xl font-semibold btn-outline">Learn How It Works</a>
+          </div>
+          <dl class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+            <div><dt class="counter text-3xl font-extrabold text-brand" data-target="99.8" data-symbol="%">0%</dt><dd class="text-sm text-slate-500 mt-1">Inventory Accuracy</dd></div>
+            <div><dt class="counter text-3xl font-extrabold text-brand" data-target="25" data-symbol="%">0%</dt><dd class="text-sm text-slate-500 mt-1">Reduction in Costs</dd></div>
+            <div><dt class="counter text-3xl font-extrabold text-brand" data-target="2" data-symbol=" wks">0 wks</dt><dd class="text-sm text-slate-500 mt-1">Average Go-Live</dd></div>
+          </dl>
+        </div>
+
+        <div class="relative scroll-animate" style="transition-delay: 150ms;">
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-soft">
+            <div class="text-slate-700 font-medium mb-2">Control Tower Overview</div>
+            <svg viewBox="0 0 400 240" class="w-full h-auto max-h-72">
+                <defs><marker id="arrowhead" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto"><polygon points="0 0, 5 1.75, 0 3.5" fill="#95C93D" /></marker></defs>
+                <g stroke="#e5e7eb" stroke-width="1"><line x1="20" y1="60" x2="380" y2="60"/><line x1="20" y1="120" x2="380" y2="120"/><line x1="20" y1="180" x2="380" y2="180"/></g>
+                <text x="25" y="125" font-size="10" fill="#64748b">Supplier</text>
+                <text x="175" y="125" font-size="10" fill="#64748b">Distribution Center</text>
+                <text x="335" y="125" font-size="10" fill="#64748b">Customer</text>
+                <path d="M 60 120 C 160 120 200 60 300 80" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3 4"/>
+                <path d="M 60 120 C 140 180 180 200 300 200" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3 4"/>
+                <circle cx="60" cy="120" r="16" fill="var(--brand-primary)" stroke="var(--brand-primary)"/>
+                <circle cx="300" cy="80" r="12" fill="#fff" stroke="#cbd5e1"/>
+                <circle cx="300"cy="200" r="12" fill="#fff" stroke="#cbd5e1"/>
+                <circle r="5" fill="#95C93D" marker-end="url(#arrowhead)"><animateMotion path="M 60 120 C 160 120 200 60 300 80" dur="4s" repeatCount="indefinite" /></circle>
+                <circle r="5" fill="#95C93D" marker-end="url(#arrowhead)"><animateMotion path="M 60 120 C 140 180 180 200 300 200" dur="5s" repeatCount="indefinite" /></circle>
+                <circle cx="300" cy="80" r="6" fill="#EF4444"><animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".3;.9;.3" dur="1.5s" repeatCount="indefinite"/></circle>
+            </svg>
+            <div class="mt-3 text-xs text-slate-500">Real-time data flows from suppliers to customers, with intelligent alerts for exceptions.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customers -->
+    <section id="customers" class="py-16 bg-slate-50/70">
+        <div class="container mx-auto px-4 scroll-animate">
+          <div class="text-center">
+             <h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">Trusted by Industry Leaders</h2>
+             <p class="mt-3 text-slate-600 max-w-2xl mx-auto">We're proud to partner with innovative companies that are shaping the future of supply chain in the region.</p>
+          </div>
+          <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+            <a href="#" class="group flex h-28 items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 transition hover:border-slate-400 hover:bg-slate-50"><span class="text-sm font-medium text-slate-400 group-hover:text-slate-500">Client Logo</span></a>
+          </div>
+        </div>
+    </section>
+
+    <!-- How it Works (Platform Architecture) -->
+    <section id="platform" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">How O360 Works</h2>
+            <p class="mt-3 text-slate-600 max-w-2xl mx-auto">Our unified platform is built on three core pillars that turn fragmented data into collaborative action and intelligent insights.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft"><div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-primary-50 text-brand-primary font-bold text-lg">1</div><h3 class="text-xl font-bold text-brand mt-4">Connect & Harmonize</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">We connect to any source system—ERPs, carrier portals, IoT devices—via APIs, EDI, and webhooks. Our data harmonization engine cleans and structures information into a single, reliable model.</p></div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft"><div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-primary-50 text-brand-primary font-bold text-lg">2</div><h3 class="text-xl font-bold text-brand mt-4">Collaborate in Real-Time</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Internal teams and external partners work together in a shared workspace. Manage orders, track inventory, and resolve exceptions with clear ownership, tasks, and a full audit trail.</p></div>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-soft"><div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-primary-50 text-brand-primary font-bold text-lg">3</div><h3 class="text-xl font-bold text-brand mt-4">Optimize with Intelligence</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Live dashboards provide network-wide KPIs. Proactive alerts flag potential disruptions before they impact customers. Use predictive insights to improve forecasting and decision-making.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Summary -->
+    <section class="py-16 md:py-24 bg-slate-50/70">
+      <div class="container mx-auto px-4 text-center scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">A Modular Platform for End-to-End Control</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl mx-auto">From core order and inventory management to specialized modules for warehousing, manufacturing, and transport, O360 grows with your business needs.</p>
+        <div class="mt-8">
+            <a href="features.html" class="px-6 py-3 rounded-xl font-semibold btn-primary shadow-soft">Explore All Features</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Summary -->
+     <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4 text-center scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">Solutions Purpose-Built for Your Industry</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl mx-auto">We understand the unique challenges of your industry. Discover how O360 provides tailored solutions for 3PLs, enterprise shippers, and commodity traders.</p>
+        <div class="mt-8">
+            <a href="industries.html" class="px-6 py-3 rounded-xl font-semibold btn-outline">See Industry Solutions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Summary -->
+    <section class="py-16 md:py-24 bg-slate-50/70">
+      <div class="container mx-auto px-4 text-center scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand tracking-tight">Real Results for Leading Companies</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl mx-auto">See how Parco Gunvor Limited achieved 99.8% inventory accuracy and other companies are transforming their operations with O360.</p>
+        <div class="mt-8">
+            <a href="case_studies.html" class="px-6 py-3 rounded-xl font-semibold btn-primary shadow-soft">Read Customer Stories</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Demo CTA -->
+    <section id="demo" class="py-16 md:py-24 text-white brand-gradient">
+      <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="scroll-animate">
+          <h2 class="text-3xl md:text-4xl font-extrabold">Ready to Unify Your Supply Chain?</h2>
+          <p class="mt-3 text-lg text-white/90">Let's map your flows, surface quick wins, and build a business case for transformation. No obligation, just insights.</p>
+          <ul class="mt-6 text-white/90 space-y-3">
+            <li class="flex items-start gap-3"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span>45‑minute live platform walkthrough</span></li>
+            <li class="flex items-start gap-3"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Custom KPI baseline & ROI modeling</span></li>
+            <li class="flex items-start gap-3"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Phased rollout and integration plan</span></li>
+          </ul>
+        </div>
+        <div class="bg-white text-slate-900 rounded-2xl p-6 md:p-8 shadow-soft scroll-animate">
+          <div id="demo-form-container">
+            <h3 class="font-bold text-xl text-center">Schedule a Personalized Demo</h3>
+            <form id="demoForm" class="mt-6 grid gap-4">
+              <div><label class="text-sm font-medium">Full Name</label><input type="text" name="name" required class="mt-1 w-full rounded-lg border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]" placeholder="Jane Doe" /></div>
+              <div><label class="text-sm font-medium">Work Email</label><input type="email" name="email" required class="mt-1 w-full rounded-lg border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]" placeholder="jane@company.com" /></div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div><label class="text-sm font-medium">Company</label><input type="text" name="company" required class="mt-1 w-full rounded-lg border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]" placeholder="Acme Corp" /></div>
+                <div><label class="text-sm font-medium">Industry</label><select name="industry" class="mt-1 w-full rounded-lg border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]"><option>3PL</option><option>Retail/CPG</option><option>Trader</option></select></div>
+              </div>
+              <div><label class="text-sm font-medium">What is your biggest supply chain challenge?</label><textarea rows="3" name="goals" class="mt-1 w-full rounded-lg border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]" placeholder="e.g., Lack of visibility, high freight costs..."></textarea></div>
+              <button type="submit" class="mt-2 w-full px-4 py-3 rounded-xl btn-primary font-semibold">Request My Demo</button>
+              <p class="text-xs text-slate-500 text-center">We respect your privacy.</p>
+            </form>
+          </div>
+          <div id="form-success-message" class="hidden text-center py-8">
+            <div class="inline-block bg-green-100 rounded-full p-3"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+            <h3 class="mt-4 text-xl font-bold text-brand">Thank You!</h3>
+            <p class="mt-2 text-slate-600">Your demo request has been received. Our team will be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-[var(--brand-header)] text-[var(--brand-contrast)]">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <img src="[https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg](https://cdn.prod.website-files.com/6719e1901505503c090ccf26/671a10ca5f6dc5add0600eed_O360logo-white%26green.svg)" alt="O360" class="h-7 w-auto">
+          </div>
+          <div class="text-sm text-white/80">
+            <a href="about.html" class="hover:text-white">About Us</a> | <a href="#" class="hover:text-white">Careers</a> | <a href="#" class="hover:text-white">Contact</a>
+          </div>
+          <p class="text-xs text-white/60 md:text-right">© <span id="year"></span> Oware Technologies, Inc. All rights reserved.</p>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      
+      mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              mobileMenu.classList.add('hidden');
+              openIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+          });
+      });
+
+      // Demo form submission
+      const demoForm = document.getElementById('demoForm');
+      if(demoForm){
+          const formContainer = document.getElementById('demo-form-container');
+          const successMessage = document.getElementById('form-success-message');
+          demoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formContainer.style.opacity = 0;
+            setTimeout(() => {
+                formContainer.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            }, 300);
+          });
+      }
+      
+      // Animated Counter
+      const animateCounters = (el) => {
+        const target = +el.dataset.target;
+        const duration = 1500;
+        const symbol = el.dataset.symbol || '';
+        let start = 0;
+        const stepTime = Math.abs(Math.floor(duration / target));
+        const timer = setInterval(() => {
+          start += 1;
+          const isFloat = target % 1 !== 0;
+          el.textContent = isFloat ? start.toFixed(1) + symbol : start + symbol;
+          if (start >= target) {
+            el.textContent = target + symbol;
+            clearInterval(timer);
+          }
+        }, stepTime);
+      }
+
+      // Scroll Animations using Intersection Observer
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  const counters = entry.target.querySelectorAll('.counter');
+                  counters.forEach(counter => {
+                      if (!counter.classList.contains('animated')) {
+                          animateCounters(counter);
+                          counter.classList.add('animated');
+                      }
+                  });
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, { threshold: 0.1 });
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
